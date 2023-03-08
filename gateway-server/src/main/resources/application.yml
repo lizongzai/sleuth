@@ -6,37 +6,43 @@ spring:
     name: gateway-server # 应用名称
   cloud:
     gateway:
-      # 路由规则
-      routes:
-        - id: product-service           # 路由 ID，唯一
-          uri: lb://product-service     # lb:// 根据服务名称从注册中心获取服务请求地址
-          predicates: # 断言（判断条件）
-            # 匹配对应 URI 的请求，将匹配到的请求追加在目标 URI 之后
-            - Path=/product/**
-          filters: # 网关过滤器
-            # 限流过滤器
-            - name: RequestRateLimiter
-              args:
-                redis-rate-limiter.replenishRate: 1 # 令牌桶每秒填充速率
-                redis-rate-limiter.burstCapacity: 2 # 令牌桶总容量
-                #key-resolver: "#{@pathKeyResolver}" # 使用 SpEL 表达式按名称引用 bean
-                #key-resolver: "#{@parameterKeyResolver}" # 使用 SpEL 表达式按名称引用 bean
-                key-resolver: "#{@ipKeyResolver}" # 使用 SpEL 表达式按名称引用 bean
+      discovery:
+        locator:
+          # 是否与服务发现组件进行结合，通过 serviceId 转发到具体服务实例。http://localhost:9000/product-service/product/1
+          enabled: true                  # 是否开启基于服务发现的路由规则
+          lower-case-service-id: true    # 是否将服务名称转小写
 
-        - id: order-service           # 路由 ID，唯一
-          uri: lb://order-service     # lb:// 根据服务名称从注册中心获取服务请求地址
-          predicates: # 断言（判断条件）
-            # 匹配对应 URI 的请求，将匹配到的请求追加在目标 URI 之后
-            - Path=/order/**
-          filters: # 网关过滤器
-            # 限流过滤器
-            - name: RequestRateLimiter
-              args:
-                redis-rate-limiter.replenishRate: 1 # 令牌桶每秒填充速率
-                redis-rate-limiter.burstCapacity: 2 # 令牌桶总容量
-                #key-resolver: "#{@pathKeyResolver}" # 使用 SpEL 表达式按名称引用 bean
-                #key-resolver: "#{@parameterKeyResolver}" # 使用 SpEL 表达式按名称引用 bean
-                key-resolver: "#{@ipKeyResolver}" # 使用 SpEL 表达式按名称引用 bean
+#      # 路由规则
+#      routes:
+#        - id: product-service           # 路由 ID，唯一
+#          uri: lb://product-service     # lb:// 根据服务名称从注册中心获取服务请求地址
+#          predicates: # 断言（判断条件）
+#            # 匹配对应 URI 的请求，将匹配到的请求追加在目标 URI 之后
+#            - Path=/product/**
+#          filters: # 网关过滤器
+#            # 限流过滤器
+#            - name: RequestRateLimiter
+#              args:
+#                redis-rate-limiter.replenishRate: 1 # 令牌桶每秒填充速率
+#                redis-rate-limiter.burstCapacity: 2 # 令牌桶总容量
+#                #key-resolver: "#{@pathKeyResolver}" # 使用 SpEL 表达式按名称引用 bean
+#                #key-resolver: "#{@parameterKeyResolver}" # 使用 SpEL 表达式按名称引用 bean
+#                key-resolver: "#{@ipKeyResolver}" # 使用 SpEL 表达式按名称引用 bean
+#
+#        - id: order-service           # 路由 ID，唯一
+#          uri: lb://order-service     # lb:// 根据服务名称从注册中心获取服务请求地址
+#          predicates: # 断言（判断条件）
+#            # 匹配对应 URI 的请求，将匹配到的请求追加在目标 URI 之后
+#            - Path=/order/**
+#          filters: # 网关过滤器
+#            # 限流过滤器
+#            - name: RequestRateLimiter
+#              args:
+#                redis-rate-limiter.replenishRate: 1 # 令牌桶每秒填充速率
+#                redis-rate-limiter.burstCapacity: 2 # 令牌桶总容量
+#                #key-resolver: "#{@pathKeyResolver}" # 使用 SpEL 表达式按名称引用 bean
+#                #key-resolver: "#{@parameterKeyResolver}" # 使用 SpEL 表达式按名称引用 bean
+#                key-resolver: "#{@ipKeyResolver}" # 使用 SpEL 表达式按名称引用 bean
 
   #      routes:
   #        - id: product-service           # 路由 ID，唯一

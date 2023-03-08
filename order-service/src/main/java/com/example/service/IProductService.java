@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
  * 功能描述: 调用服务生产者的微服务名称,例如：product-service
  *
  * @author lizongzai
- * @date 2023/03/01 14:09
+ * @date 2023/03/08 15:45
  * @since 1.0.0
  */
 // 声明需要调用的服务和服务熔断处理类
