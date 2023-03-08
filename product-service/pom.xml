@@ -71,6 +71,12 @@
       <artifactId>spring-boot-starter-actuator</artifactId>
     </dependency>
 
+    <!-- spring cloud sleuth 依赖 -->
+    <dependency>
+      <groupId>org.springframework.cloud</groupId>
+      <artifactId>spring-cloud-starter-sleuth</artifactId>
+    </dependency>
+
     <!--Junit 测试单元依赖-->
     <dependency>
       <groupId>junit</groupId>

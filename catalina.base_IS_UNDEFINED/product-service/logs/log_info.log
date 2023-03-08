@@ -1,0 +1,11 @@
+2023-03-08 15:59:27.787 [product-service,,] [main] INFO  com.example.ProductServiceApplication - No active profile set, falling back to default profiles: default
+2023-03-08 15:59:28.504 [product-service,,] [main] INFO  o.springframework.cloud.context.scope.GenericScope - BeanFactory id=aa16442d-755b-3a28-8152-8c436e7547e4
+2023-03-08 15:59:28.706 [product-service,,] [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-03-08 15:59:28.957 [product-service,,] [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 7070 (http)
+2023-03-08 15:59:28.963 [product-service,,] [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-7070"]
+2023-03-08 15:59:28.963 [product-service,,] [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2023-03-08 15:59:28.963 [product-service,,] [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.30]
+2023-03-08 15:59:29.104 [product-service,,] [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-03-08 15:59:29.105 [product-service,,] [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1307 ms
+2023-03-08 15:59:29.197 [product-service,,] [main] INFO  com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2023-03-08 15:59:29.203 [product-service,,] [main] INFO  com.netflix.config.DynamicPropertyFactory - DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@22da200e
