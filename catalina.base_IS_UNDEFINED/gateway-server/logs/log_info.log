@@ -48,3 +48,5 @@
 2023-03-08 15:59:56.077 [gateway-server,,] [main] INFO  o.s.boot.web.embedded.netty.NettyWebServer - Netty started on port(s): 9000
 2023-03-08 15:59:56.078 [gateway-server,,] [main] INFO  o.s.c.n.e.s.EurekaAutoServiceRegistration - Updating port to 9000
 2023-03-08 15:59:57.186 [gateway-server,,] [main] INFO  com.example.GatewayServerApplication - Started GatewayServerApplication in 10.495 seconds (JVM running for 11.934)
+2023-03-08 16:04:55.328 [gateway-server,,] [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2023-03-08 16:09:55.341 [gateway-server,,] [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
