@@ -77,6 +77,12 @@
       <artifactId>spring-cloud-starter-sleuth</artifactId>
     </dependency>
 
+    <!-- spring cloud zipkin 依赖 -->
+    <dependency>
+      <groupId>org.springframework.cloud</groupId>
+      <artifactId>spring-cloud-starter-zipkin</artifactId>
+    </dependency>
+
     <!--Junit 测试单元依赖-->
     <dependency>
       <groupId>junit</groupId>
