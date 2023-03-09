@@ -1,0 +1,11 @@
+1. MySQL新建zipkin库，然后建表
+详情脚本可以查阅文件：sql/zipkin.sql
+
+2. 安装zipkin
+// 拉取镜像
+docker pull openzipkin/zipkin:2.21.7
+// 部署
+docker  run --name zipkin -d --restart=always -p 9411:9411 -e MYSQL_USER=root -e MYSQL_PASS=password -e MYSQL_HOST=localhost -e STORAGE_TYPE=mysql -e MYSQL_DB=zipkin -e MYSQL_TCP_PORT=3306 openzipkin/zipkin:2.21.7
+
+// 由于zipkin部署在192.168.126.64服务器，而mysql数据库连接的本地开发环境localhost(192.168.126.1)
+docker  run --name zipkin -d --restart=always -p 9411:9411 -e MYSQL_USER=root -e MYSQL_PASS=password -e MYSQL_HOST=192.168.126.1 -e STORAGE_TYPE=mysql -e MYSQL_DB=zipkin -e MYSQL_TCP_PORT=3306 openzipkin/zipkin:2.21.7
