@@ -83,6 +83,12 @@
       <artifactId>spring-cloud-starter-zipkin</artifactId>
     </dependency>
 
+    <!-- 消息队列通用依赖 -->
+    <dependency>
+      <groupId>org.springframework.amqp</groupId>
+      <artifactId>spring-rabbit</artifactId>
+    </dependency>
+
     <!--Junit 测试单元依赖-->
     <dependency>
       <groupId>junit</groupId>

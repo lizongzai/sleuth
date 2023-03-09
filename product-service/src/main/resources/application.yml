@@ -16,10 +16,37 @@ spring:
     url: "jdbc:mysql://localhost:3306/micro_service?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai"
     username: root
     password: password
+#  zipkin:
+#    base-url: http://192.168.126.64:9411/ # 服务端地址
+#    sender:
+#      type: web                      # 数据传输方式，web 表示以 HTTP 报文的形式向服务端发送数据
+#  sleuth:
+#    sampler:
+#      probability: 1.0               # 收集数据百分比，默认 0.1（10%）
+
   zipkin:
     base-url: http://192.168.126.64:9411/ # 服务端地址
     sender:
-      type: web                      # 数据传输方式，web 表示以 HTTP 报文的形式向服务端发送数据
+      type: rabbit
+    rabbitmq:
+      queue: zipkin                  # 队列名称
+  rabbitmq:
+    host: 192.168.126.64             # 服务器 IP
+    port: 5672                       # 服务器端口
+    username: lizongzai                  # 用户名
+    password: password               # 密码
+    virtual-host: /                  # 虚拟主机地址
+    listener:
+      direct:
+        retry:
+          enabled: true              # 是否开启发布重试
+          max-attempts: 5            # 最大重试次数
+          initial-interval: 5000     # 重试间隔时间（单位毫秒）
+      simple:
+        retry:
+          enabled: true              # 是否开启消费者重试
+          max-attempts: 5            # 最大重试次数
+          initial-interval: 5000     # 重试间隔时间（单位毫秒）
   sleuth:
     sampler:
       probability: 1.0               # 收集数据百分比，默认 0.1（10%）

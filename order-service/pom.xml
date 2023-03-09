@@ -107,6 +107,11 @@
       <artifactId>spring-cloud-starter-zipkin</artifactId>
     </dependency>
 
+    <!-- 消息队列通用依赖 -->
+    <dependency>
+      <groupId>org.springframework.amqp</groupId>
+      <artifactId>spring-rabbit</artifactId>
+    </dependency>
 
   </dependencies>
 </project>
