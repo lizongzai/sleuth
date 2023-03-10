@@ -9,9 +9,11 @@
   <!-- name的值是变量的名称，value的值是变量定义的值。通过定义的值会被插入到logger上下文中。定义变量后，可以使“${}”来使用变量。 -->
   <property name="log.path" value="${catalina.base}/gateway-server/logs"/>
   <!-- 加载 Spring 配置文件信息 -->
-  <springProperty scope="context" name="applicationName" source="spring.application.name" defaultValue="localhost"/>
+  <springProperty scope="context" name="applicationName" source="spring.application.name"
+    defaultValue="localhost"/>
   <!-- 日志输出格式 -->
-  <property name="LOG_PATTERN" value="%d{yyyy-MM-dd HH:mm:ss.SSS} [${applicationName},%X{X-B3-TraceId:-},%X{X-B3-SpanId:-}] [%thread] %-5level %logger{50} - %msg%n"/>
+  <property name="LOG_PATTERN"
+    value="%d{yyyy-MM-dd HH:mm:ss.SSS} [${applicationName},%X{X-B3-TraceId:-},%X{X-B3-SpanId:-}] [%thread] %-5level %logger{50} - %msg%n"/>
 
   <!--输出到控制台-->
   <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
@@ -40,7 +42,8 @@
     <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
       <!-- 日志归档 -->
       <fileNamePattern>${log.path}/debug/log-debug-%d{yyyy-MM-dd}.%i.log</fileNamePattern>
-      <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+      <timeBasedFileNamingAndTriggeringPolicy
+        class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
         <maxFileSize>100MB</maxFileSize>
       </timeBasedFileNamingAndTriggeringPolicy>
       <!--日志文件保留天数-->
@@ -67,7 +70,8 @@
     <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
       <!-- 每天日志归档路径以及格式 -->
       <fileNamePattern>${log.path}/info/log-info-%d{yyyy-MM-dd}.%i.log</fileNamePattern>
-      <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+      <timeBasedFileNamingAndTriggeringPolicy
+        class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
         <maxFileSize>100MB</maxFileSize>
       </timeBasedFileNamingAndTriggeringPolicy>
       <!--日志文件保留天数-->
@@ -94,7 +98,8 @@
     <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
       <fileNamePattern>${log.path}/warn/log-warn-%d{yyyy-MM-dd}.%i.log</fileNamePattern>
       <!-- 每个日志文件最大100MB -->
-      <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+      <timeBasedFileNamingAndTriggeringPolicy
+        class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
         <maxFileSize>100MB</maxFileSize>
       </timeBasedFileNamingAndTriggeringPolicy>
       <!--日志文件保留天数-->
@@ -120,7 +125,8 @@
     <!-- 日志记录器的滚动策略，按日期，按大小记录 -->
     <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
       <fileNamePattern>${log.path}/error/log-error-%d{yyyy-MM-dd}.%i.log</fileNamePattern>
-      <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+      <timeBasedFileNamingAndTriggeringPolicy
+        class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
         <maxFileSize>100MB</maxFileSize>
       </timeBasedFileNamingAndTriggeringPolicy>
       <!--日志文件保留天数-->
@@ -148,9 +154,37 @@
     <appender-ref ref="CONSOLE"/>
   </logger>
 
+  <!-- 为 Logstash 输出 JSON 格式数据 -->
+  <appender name="LOGSTASH_PATTERN" class="net.logstash.logback.appender.LogstashTcpSocketAppender">
+    <!-- 数据输出目的地 -->
+    <destination>192.168.126.70:9250</destination>
+    <!-- 日志输出编码 -->
+    <encoder class="net.logstash.logback.encoder.LoggingEventCompositeJsonEncoder">
+      <providers>
+        <pattern>
+          <pattern>
+            {
+            "severity": "%level",
+            "service": "${springAppName:-}",
+            "trace": "%X{X-B3-TraceId:-}",
+            "span": "%X{X-B3-SpanId:-}",
+            "exportable": "%X{X-Span-Export:-}",
+            "pid": "${PID:-}",
+            "thread": "%thread",
+            "class": "%logger{40}",
+            "rest": "%message"
+            }
+          </pattern>
+        </pattern>
+      </providers>
+    </encoder>
+  </appender>
+
+
   <!-- 日志输出级别及方式 -->
   <root level="DEBUG">
     <appender-ref ref="CONSOLE"/>
+    <appender-ref ref="LOGSTASH_PATTERN"/>
     <appender-ref ref="DEBUG_FILE"/>
     <appender-ref ref="INFO_FILE"/>
     <appender-ref ref="WARN_FILE"/>

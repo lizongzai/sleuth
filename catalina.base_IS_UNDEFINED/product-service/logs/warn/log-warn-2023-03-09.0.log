@@ -1,0 +1,61 @@
+2023-03-09 10:24:17.679 [product-service,,] [main] WARN  o.springframework.boot.actuate.endpoint.EndpointId - Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+2023-03-09 10:24:18.767 [product-service,,] [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2023-03-09 10:24:22.073 [product-service,,] [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2023-03-09 10:24:24.545 [product-service,,] [main] WARN  o.s.c.l.c.BlockingLoadBalancerClientAutoConfiguration$BlockingLoadBalancerClientRibbonWarnLogger - You already have RibbonLoadBalancerClient on your classpath. It will be used by default. As Spring Cloud Ribbon is in maintenance mode. We recommend switching to BlockingLoadBalancerClient instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
+2023-03-09 11:12:00.035 [product-service,,] [SpringContextShutdownHook] WARN  com.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1678331520035, current=DOWN, previous=UP]
+2023-03-09 11:12:09.866 [product-service,,] [main] WARN  o.springframework.boot.actuate.endpoint.EndpointId - Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+2023-03-09 11:12:10.612 [product-service,,] [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2023-03-09 11:12:12.968 [product-service,,] [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2023-03-09 11:12:14.834 [product-service,,] [main] WARN  o.s.c.l.c.BlockingLoadBalancerClientAutoConfiguration$BlockingLoadBalancerClientRibbonWarnLogger - You already have RibbonLoadBalancerClient on your classpath. It will be used by default. As Spring Cloud Ribbon is in maintenance mode. We recommend switching to BlockingLoadBalancerClient instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
+2023-03-09 14:18:19.224 [product-service,,] [SpringContextShutdownHook] WARN  com.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1678342699224, current=DOWN, previous=UP]
+2023-03-09 14:18:31.547 [product-service,,] [main] WARN  o.springframework.boot.actuate.endpoint.EndpointId - Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+2023-03-09 14:18:32.347 [product-service,,] [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2023-03-09 14:18:35.289 [product-service,,] [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2023-03-09 14:18:37.415 [product-service,,] [main] WARN  o.s.c.l.c.BlockingLoadBalancerClientAutoConfiguration$BlockingLoadBalancerClientRibbonWarnLogger - You already have RibbonLoadBalancerClient on your classpath. It will be used by default. As Spring Cloud Ribbon is in maintenance mode. We recommend switching to BlockingLoadBalancerClient instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
+2023-03-09 14:26:54.724 [product-service,,] [AMQP Connection 192.168.126.64:5672] WARN  com.rabbitmq.client.impl.ForgivingExceptionHandler - An unexpected connection driver error occured (Exception message: Connection reset)
+2023-03-09 14:26:54.724 [product-service,,] [AMQP Connection 192.168.126.64:5672] WARN  com.rabbitmq.client.impl.ForgivingExceptionHandler - An unexpected connection driver error occured (Exception message: Connection reset)
+2023-03-09 14:27:21.692 [product-service,,] [AsyncReporter{RabbitMQSender{addresses=[192.168.126.64:5672], queue=zipkin}}] WARN  z.reporter.AsyncReporter$BoundedAsyncReporter - Spans were dropped due to exceptions. All subsequent errors will be logged at FINE level.
+2023-03-09 14:27:21.694 [product-service,,] [AsyncReporter{RabbitMQSender{addresses=[192.168.126.64:5672], queue=zipkin}}] WARN  z.reporter.AsyncReporter$BoundedAsyncReporter - Dropped 5 spans due to AlreadyClosedException(connection is already closed due to connection error; cause: java.net.SocketException: Connection reset)
+com.rabbitmq.client.AlreadyClosedException: connection is already closed due to connection error; cause: java.net.SocketException: Connection reset
+	at com.rabbitmq.client.impl.AMQChannel.ensureIsOpen(AMQChannel.java:258)
+	at com.rabbitmq.client.impl.AMQChannel.transmit(AMQChannel.java:427)
+	at com.rabbitmq.client.impl.ChannelN.basicPublish(ChannelN.java:710)
+	at com.rabbitmq.client.impl.ChannelN.basicPublish(ChannelN.java:685)
+	at com.rabbitmq.client.impl.ChannelN.basicPublish(ChannelN.java:675)
+	at zipkin2.reporter.amqp.RabbitMQSender$RabbitMQCall.publish(RabbitMQSender.java:290)
+	at zipkin2.reporter.amqp.RabbitMQSender$RabbitMQCall.doExecute(RabbitMQSender.java:285)
+	at zipkin2.reporter.amqp.RabbitMQSender$RabbitMQCall.doExecute(RabbitMQSender.java:277)
+	at zipkin2.Call$Base.execute(Call.java:380)
+	at zipkin2.reporter.AsyncReporter$BoundedAsyncReporter.flush(AsyncReporter.java:285)
+	at zipkin2.reporter.AsyncReporter$Flusher.run(AsyncReporter.java:354)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2023-03-09 14:28:41.654 [product-service,,] [SpringContextShutdownHook] WARN  com.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1678343321654, current=DOWN, previous=UP]
+2023-03-09 14:28:42.228 [product-service,,] [SpringContextShutdownHook] WARN  o.s.beans.factory.support.DisposableBeanAdapter - Destroy method 'close' on bean with name 'zipkinSender' threw an exception
+com.rabbitmq.client.AlreadyClosedException: connection is already closed due to connection error; cause: java.net.SocketException: Connection reset
+	at com.rabbitmq.client.impl.AMQConnection.startShutdown(AMQConnection.java:923)
+	at com.rabbitmq.client.impl.AMQConnection.close(AMQConnection.java:1038)
+	at com.rabbitmq.client.impl.AMQConnection.close(AMQConnection.java:967)
+	at com.rabbitmq.client.impl.AMQConnection.close(AMQConnection.java:951)
+	at com.rabbitmq.client.impl.AMQConnection.close(AMQConnection.java:943)
+	at zipkin2.reporter.amqp.RabbitMQSender.close(RabbitMQSender.java:256)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.invokeCustomDestroyMethod(DisposableBeanAdapter.java:339)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:273)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:571)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:543)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:1072)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:504)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:1065)
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1060)
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1029)
+	at org.springframework.context.support.AbstractApplicationContext$1.run(AbstractApplicationContext.java:948)
+2023-03-09 14:28:51.315 [product-service,,] [main] WARN  o.springframework.boot.actuate.endpoint.EndpointId - Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+2023-03-09 14:28:52.105 [product-service,,] [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2023-03-09 14:28:54.563 [product-service,,] [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2023-03-09 14:28:56.964 [product-service,,] [main] WARN  o.s.c.l.c.BlockingLoadBalancerClientAutoConfiguration$BlockingLoadBalancerClientRibbonWarnLogger - You already have RibbonLoadBalancerClient on your classpath. It will be used by default. As Spring Cloud Ribbon is in maintenance mode. We recommend switching to BlockingLoadBalancerClient instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
+2023-03-09 16:39:40.082 [product-service,,] [AMQP Connection 192.168.126.64:5672] WARN  com.rabbitmq.client.impl.ForgivingExceptionHandler - An unexpected connection driver error occured (Exception message: Connection reset)
+2023-03-09 16:39:40.082 [product-service,,] [AMQP Connection 192.168.126.64:5672] WARN  com.rabbitmq.client.impl.ForgivingExceptionHandler - An unexpected connection driver error occured (Exception message: Connection reset)
+2023-03-09 20:54:14.955 [product-service,,] [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=4h14m41s992ms84µs500ns).

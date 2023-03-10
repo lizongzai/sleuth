@@ -1,4 +1,4 @@
-2023-03-08 16:39:27.131 [gateway-server,,] [SpringContextShutdownHook] ERROR c.n.d.s.t.decorator.RedirectingEurekaHttpClient - Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://root:123456@localhost:8762/eureka/}
+2023-03-10 00:44:39.221 [gateway-server,,] [SpringContextShutdownHook] ERROR c.n.d.s.t.decorator.RedirectingEurekaHttpClient - Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://root:123456@localhost:8762/eureka/}
 com.sun.jersey.api.client.ClientHandlerException: java.net.ConnectException: Connection refused: connect
 	at com.sun.jersey.client.apache4.ApacheHttpClient4Handler.handle(ApacheHttpClient4Handler.java:187)
 	at com.sun.jersey.api.client.filter.GZIPContentEncodingFilter.handle(GZIPContentEncodingFilter.java:123)
@@ -61,7 +61,7 @@ Caused by: java.net.ConnectException: Connection refused: connect
 	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
 	at com.sun.jersey.client.apache4.ApacheHttpClient4Handler.handle(ApacheHttpClient4Handler.java:173)
 	... 41 common frames omitted
-2023-03-08 16:39:27.156 [gateway-server,,] [SpringContextShutdownHook] ERROR c.n.d.s.t.decorator.RedirectingEurekaHttpClient - Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://root:123456@localhost:8762/eureka/}
+2023-03-10 00:44:39.249 [gateway-server,,] [SpringContextShutdownHook] ERROR c.n.d.s.t.decorator.RedirectingEurekaHttpClient - Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://root:123456@localhost:8762/eureka/}
 com.sun.jersey.api.client.ClientHandlerException: java.net.ConnectException: Connection refused: connect
 	at com.sun.jersey.client.apache4.ApacheHttpClient4Handler.handle(ApacheHttpClient4Handler.java:187)
 	at com.sun.jersey.api.client.filter.GZIPContentEncodingFilter.handle(GZIPContentEncodingFilter.java:123)
@@ -125,7 +125,7 @@ Caused by: java.net.ConnectException: Connection refused: connect
 	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
 	at com.sun.jersey.client.apache4.ApacheHttpClient4Handler.handle(ApacheHttpClient4Handler.java:173)
 	... 42 common frames omitted
-2023-03-08 16:39:27.171 [gateway-server,,] [SpringContextShutdownHook] ERROR c.n.d.s.t.decorator.RedirectingEurekaHttpClient - Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://root:123456@localhost:8761/eureka/}
+2023-03-10 00:44:39.252 [gateway-server,,] [SpringContextShutdownHook] ERROR c.n.d.s.t.decorator.RedirectingEurekaHttpClient - Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://root:123456@localhost:8761/eureka/}
 com.sun.jersey.api.client.ClientHandlerException: java.net.ConnectException: Connection refused: connect
 	at com.sun.jersey.client.apache4.ApacheHttpClient4Handler.handle(ApacheHttpClient4Handler.java:187)
 	at com.sun.jersey.api.client.filter.GZIPContentEncodingFilter.handle(GZIPContentEncodingFilter.java:123)
@@ -189,7 +189,7 @@ Caused by: java.net.ConnectException: Connection refused: connect
 	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
 	at com.sun.jersey.client.apache4.ApacheHttpClient4Handler.handle(ApacheHttpClient4Handler.java:173)
 	... 42 common frames omitted
-2023-03-08 16:39:27.173 [gateway-server,,] [SpringContextShutdownHook] ERROR com.netflix.discovery.DiscoveryClient - DiscoveryClient_GATEWAY-SERVER/192.168.126.1:9000 - de-registration failedRetry limit reached; giving up on completing the request
+2023-03-10 00:44:39.252 [gateway-server,,] [SpringContextShutdownHook] ERROR com.netflix.discovery.DiscoveryClient - DiscoveryClient_GATEWAY-SERVER/192.168.126.1:9000 - de-registration failedRetry limit reached; giving up on completing the request
 com.netflix.discovery.shared.transport.TransportException: Retry limit reached; giving up on completing the request
 	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:139)
 	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
