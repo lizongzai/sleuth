@@ -282,3 +282,66 @@ java.lang.IllegalStateException: Shutdown in progress
 2023-03-10 14:19:13.041 [order-service,,] [SpringContextShutdownHook] INFO  com.netflix.discovery.DiscoveryClient - Completed shut down of DiscoveryClient
 2023-03-10 14:19:13.042 [order-service,,] [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
 2023-03-10 14:19:13.053 [order-service,,] [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2023-03-10 14:19:20.927 [order-service,,] [main] INFO  com.example.OrderServiceApplication - No active profile set, falling back to default profiles: default
+2023-03-10 14:19:21.369 [order-service,,] [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2023-03-10 14:19:21.371 [order-service,,] [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-03-10 14:19:21.393 [order-service,,] [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 6ms. Found 0 Redis repository interfaces.
+2023-03-10 14:19:21.709 [order-service,,] [main] INFO  o.springframework.cloud.context.scope.GenericScope - BeanFactory id=447858cf-8636-3225-a63e-cd53bed8cad1
+2023-03-10 14:19:21.907 [order-service,,] [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-03-10 14:19:21.964 [order-service,,] [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'spring.sleuth.redis-org.springframework.cloud.sleuth.instrument.redis.TraceRedisProperties' of type [org.springframework.cloud.sleuth.instrument.redis.TraceRedisProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-03-10 14:19:22.185 [order-service,,] [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 9090 (http)
+2023-03-10 14:19:22.192 [order-service,,] [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9090"]
+2023-03-10 14:19:22.193 [order-service,,] [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2023-03-10 14:19:22.193 [order-service,,] [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.30]
+2023-03-10 14:19:22.362 [order-service,,] [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-03-10 14:19:22.362 [order-service,,] [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1423 ms
+2023-03-10 14:19:24.461 [order-service,,] [main] INFO  com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2023-03-10 14:19:24.467 [order-service,,] [main] INFO  com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2023-03-10 14:19:24.764 [order-service,,] [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2023-03-10 14:19:29.350 [order-service,,] [main] INFO  o.s.cloud.netflix.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING
+2023-03-10 14:19:29.387 [order-service,,] [main] INFO  com.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1
+2023-03-10 14:19:29.569 [order-service,,] [main] INFO  c.n.discovery.provider.DiscoveryJerseyProvider - Using JSON encoding codec LegacyJacksonJson
+2023-03-10 14:19:29.569 [order-service,,] [main] INFO  c.n.discovery.provider.DiscoveryJerseyProvider - Using JSON decoding codec LegacyJacksonJson
+2023-03-10 14:19:29.724 [order-service,,] [main] INFO  c.n.discovery.provider.DiscoveryJerseyProvider - Using XML encoding codec XStreamXml
+2023-03-10 14:19:29.724 [order-service,,] [main] INFO  c.n.discovery.provider.DiscoveryJerseyProvider - Using XML decoding codec XStreamXml
+2023-03-10 14:19:29.856 [order-service,,] [main] INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2023-03-10 14:19:30.459 [order-service,,] [main] INFO  com.netflix.discovery.DiscoveryClient - Disable delta property : false
+2023-03-10 14:19:30.459 [order-service,,] [main] INFO  com.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
+2023-03-10 14:19:30.459 [order-service,,] [main] INFO  com.netflix.discovery.DiscoveryClient - Force full registry fetch : false
+2023-03-10 14:19:30.459 [order-service,,] [main] INFO  com.netflix.discovery.DiscoveryClient - Application is null : false
+2023-03-10 14:19:30.459 [order-service,,] [main] INFO  com.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
+2023-03-10 14:19:30.459 [order-service,,] [main] INFO  com.netflix.discovery.DiscoveryClient - Application version is -1: true
+2023-03-10 14:19:30.461 [order-service,,] [main] INFO  com.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
+2023-03-10 14:19:30.674 [order-service,,] [main] INFO  com.netflix.discovery.DiscoveryClient - The response status is 200
+2023-03-10 14:19:30.678 [order-service,,] [main] INFO  com.netflix.discovery.DiscoveryClient - Starting heartbeat executor: renew interval is: 30
+2023-03-10 14:19:30.681 [order-service,,] [main] INFO  com.netflix.discovery.InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4
+2023-03-10 14:19:30.684 [order-service,,] [main] INFO  com.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1678429170683 with initial instances count: 4
+2023-03-10 14:19:30.690 [order-service,,] [main] INFO  o.s.c.n.e.serviceregistry.EurekaServiceRegistry - Registering application ORDER-SERVICE with eureka with status UP
+2023-03-10 14:19:30.690 [order-service,,] [main] INFO  com.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1678429170690, current=UP, previous=STARTING]
+2023-03-10 14:19:30.693 [order-service,,] [DiscoveryClient-InstanceInfoReplicator-0] INFO  com.netflix.discovery.DiscoveryClient - DiscoveryClient_ORDER-SERVICE/192.168.126.1:9090: registering service...
+2023-03-10 14:19:30.716 [order-service,,] [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9090"]
+2023-03-10 14:19:30.736 [order-service,,] [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 9090 (http) with context path ''
+2023-03-10 14:19:30.738 [order-service,,] [main] INFO  o.s.c.n.e.s.EurekaAutoServiceRegistration - Updating port to 9090
+2023-03-10 14:19:30.739 [order-service,,] [DiscoveryClient-InstanceInfoReplicator-0] INFO  com.netflix.discovery.DiscoveryClient - DiscoveryClient_ORDER-SERVICE/192.168.126.1:9090 - registration status: 204
+2023-03-10 14:19:31.600 [order-service,,] [main] INFO  com.example.OrderServiceApplication - Started OrderServiceApplication in 12.455 seconds (JVM running for 14.084)
+2023-03-10 14:20:42.402 [order-service,,] [http-nio-9090-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-03-10 14:20:42.402 [order-service,,] [http-nio-9090-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2023-03-10 14:20:42.412 [order-service,,] [http-nio-9090-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 10 ms
+2023-03-10 14:20:42.538 [order-service,6dd552a0394f2be4,4c2934f7fbd48e16] [http-nio-9090-exec-1] INFO  com.netflix.config.ChainedDynamicProperty - Flipping property: product-service.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2023-03-10 14:20:42.556 [order-service,6dd552a0394f2be4,4c2934f7fbd48e16] [http-nio-9090-exec-1] INFO  com.netflix.util.concurrent.ShutdownEnabledTimer - Shutdown hook installed for: NFLoadBalancer-PingTimer-product-service
+2023-03-10 14:20:42.556 [order-service,6dd552a0394f2be4,4c2934f7fbd48e16] [http-nio-9090-exec-1] INFO  com.netflix.loadbalancer.BaseLoadBalancer - Client: product-service instantiated a LoadBalancer: DynamicServerListLoadBalancer:{NFLoadBalancer:name=product-service,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:null
+2023-03-10 14:20:42.561 [order-service,6dd552a0394f2be4,4c2934f7fbd48e16] [http-nio-9090-exec-1] INFO  c.n.loadbalancer.DynamicServerListLoadBalancer - Using serverListUpdater PollingServerListUpdater
+2023-03-10 14:20:42.578 [order-service,6dd552a0394f2be4,4c2934f7fbd48e16] [http-nio-9090-exec-1] INFO  com.netflix.config.ChainedDynamicProperty - Flipping property: product-service.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2023-03-10 14:20:42.579 [order-service,6dd552a0394f2be4,4c2934f7fbd48e16] [http-nio-9090-exec-1] INFO  c.n.loadbalancer.DynamicServerListLoadBalancer - DynamicServerListLoadBalancer for client product-service initialized: DynamicServerListLoadBalancer:{NFLoadBalancer:name=product-service,current list of Servers=[192.168.126.1:7070],Load balancer stats=Zone stats: {defaultzone=[Zone:defaultzone;	Instance count:1;	Active connections count: 0;	Circuit breaker tripped count: 0;	Active connections per server: 0.0;]
+},Server stats: [[Server:192.168.126.1:7070;	Zone:defaultZone;	Total Requests:0;	Successive connection failure:0;	Total blackout seconds:0;	Last connection made:Thu Jan 01 08:00:00 CST 1970;	First connection made: Thu Jan 01 08:00:00 CST 1970;	Active Connections:0;	total failure count in last (1000) msecs:0;	average resp time:0.0;	90 percentile resp time:0.0;	95 percentile resp time:0.0;	min resp time:0.0;	max resp time:0.0;	stddev resp time:0.0]
+]}ServerList:org.springframework.cloud.netflix.ribbon.eureka.DomainExtractingServerList@5b34f8b3
+2023-03-10 14:20:42.803 [order-service,6dd552a0394f2be4,4c2934f7fbd48e16] [http-nio-9090-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2023-03-10 14:20:42.996 [order-service,6dd552a0394f2be4,4c2934f7fbd48e16] [http-nio-9090-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2023-03-10 14:20:43.569 [order-service,,] [PollingServerListUpdater-0] INFO  com.netflix.config.ChainedDynamicProperty - Flipping property: product-service.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2023-03-10 14:24:30.477 [order-service,,] [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2023-03-10 14:29:30.479 [order-service,,] [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2023-03-10 14:34:30.481 [order-service,,] [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2023-03-10 14:39:30.497 [order-service,,] [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2023-03-10 14:44:30.501 [order-service,,] [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2023-03-10 14:49:30.511 [order-service,,] [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2023-03-10 14:54:30.512 [order-service,,] [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
